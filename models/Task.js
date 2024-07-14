@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const taskSchema = new mongoose.Schema({
     type: {
         type: String,
-        // enum: ['text', 'list'],
         required: true
     },
     body: {

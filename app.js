@@ -1,5 +1,6 @@
 const express = require('express');
 const userRouter = require('./routers/userRouter');
+const taskRouter = require('./routers/taskRouter');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 // require('dotenv').config();
@@ -15,6 +16,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // User routers
 app.use('/user', userRouter);
+// Task routers 
+app.use('/task', taskRouter);
 
 
 // Connect to MongoDB

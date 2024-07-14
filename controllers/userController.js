@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
+require('dotenv').config();
 
 // Signup controller
 const signup = async (req, res) => {
@@ -44,7 +45,7 @@ const login = async (req, res) => {
         }
 
         // // Generate JWT token
-        const token = jwt.sign({ userId: user._id }, 'your-secret-key');
+        const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
 
         res.status(200).json(token);
     } catch (error) {
